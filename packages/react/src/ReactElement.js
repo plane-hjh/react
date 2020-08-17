@@ -144,6 +144,7 @@ function warnIfStringRefCannotBeAutoConverted(config) {
  * @internal
  */
 const ReactElement = function(type, key, ref, self, source, owner, props) {
+  // type 有可能是原生的标签，或者是自定义的组件，当为自定义的组件的时候为变量。为原生的标签的时候为字符串
   const element = {
     // This tag allows us to uniquely identify this as a React Element
     $$typeof: REACT_ELEMENT_TYPE,
